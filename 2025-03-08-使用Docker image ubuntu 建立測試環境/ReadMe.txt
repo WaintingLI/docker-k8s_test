@@ -1,0 +1,1 @@
+使用"build_draft.sh"來建立測試環境
