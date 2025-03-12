@@ -10,11 +10,11 @@ LABEL maintainer="WaitingL"
 WORKDIR /root
 
 # 首先複製build_draft.sh到工作目錄
-COPY build_draft.sh ./
+#COPY build_draft.sh ./
 
 # 安裝套件
 # RUN 指令用於在映像檔構建階段執行命令，並創建新的層。每個 RUN 指令都會在當前映像檔的頂部創建一個新的層並提交更改，進而形成新的映像檔。
-RUN pwd
+#RUN pwd
 #RUN ./build_draft.sh
 #RUN <<EOF
 #apt-get update
@@ -50,10 +50,15 @@ apt-get install -y virtualenv
 #apt-get install -y python3.12-dev python3.12-venv
 cd ~
 virtualenv --python="/usr/bin/python3" python-virtualenv
-EOF
 
 #移除所下載的apk
-RUN rm -rf /var/cache/apk/*
+rm -rf Python-3.11.4
+rm -rf Python-3.11.4.tgz
+rm -rf /var/cache/apk/*
+apt clean && rm -rf /var/lib/apt/lists/*
+EOF
+
+
 
 # 複製應用程式程式碼到工作目錄
 #COPY ./build_draft.sh
