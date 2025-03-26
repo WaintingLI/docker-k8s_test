@@ -148,3 +148,8 @@ IX. Disposability
 X. Dev/prod parity
 XI. Logs
 XII. Admin processes
+
+
+
+## 2025-03-26
+未來方向,將pip所需要的python module加入
