@@ -153,3 +153,8 @@ XII. Admin processes
 
 ## 2025-03-26
 未來方向,將pip所需要的python module加入
+
+## 2025-12-02
+因為heredoc的指令RUN <<EOF 無法Build,所以換成RUN && 來使用
+※使用docker build -t testbuild-3 . --no-cache 來Build
+評估是否要安裝virtualenv,因為docker本身就是一個虛擬環境,所以無需再安裝一個虛擬環境
