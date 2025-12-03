@@ -158,3 +158,13 @@ XII. Admin processes
 因為heredoc的指令RUN <<EOF 無法Build,所以換成RUN && 來使用
 ※使用docker build -t testbuild-3 . --no-cache 來Build
 評估是否要安裝virtualenv,因為docker本身就是一個虛擬環境,所以無需再安裝一個虛擬環境
+
+※參考網站:[精簡Dockerfile](https://ithelp.ithome.com.tw/articles/10246952])
+增加apt-get install -y zlib1g-dev[解决Python ImportError: No module named zlib问题](https://blog.csdn.net/gongjianing/article/details/125350255)
+
+
+## 2025-12-03
+修正Python3 -m pip 無法install module
+參考網站:[pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available](https://stackoverflow.com/questions/45954528/pip-is-configured-with-locations-that-require-tls-ssl-however-the-ssl-module-in)
+
+
