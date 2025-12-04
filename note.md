@@ -168,3 +168,40 @@ XII. Admin processes
 參考網站:[pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available](https://stackoverflow.com/questions/45954528/pip-is-configured-with-locations-that-require-tls-ssl-however-the-ssl-module-in)
 
 
+## 2025-12-04
+透過pip3 以安裝"requirements.txt",剩下"requirements-2.txt"還沒有安裝
+嘗試在Docker container下,使用Chrome與Chrome Driver,需要額外安裝以下的package
+```Shell
+apt-get install -y libnspr4 \
+libnss3 \
+libgbm-dev \
+libatk-bridge2.0-0 \
+libcups2 \
+libxkbcommon-x11-0 \
+libxcomposite1 \
+libxdamage1 \
+libxfixes3 \
+libxrandr2 \
+libcairo2 \
+libpango-1.0-0 \
+libasound2t64
+```
+當因為ubuntu上,Chrome和在Windows上,狀況預期不一樣,所以還需要微調,例如
+需要在Auto_app_intall.py上加入以下,在沒有GPU的ubuntu上執行
+```python
+options.add_argument("--headless")
+options.add_argument("--disable-gpu")
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+```
+部分Module 無法在Ubuntu 透過pip3來安裝,如下
+```shell
+#安裝會有問題
+pip3 install psycopg2 \
+pytz \
+pytweening \
+python-dotenv \
+python-dateutil \
+PyScreeze \
+PyRect
+```
