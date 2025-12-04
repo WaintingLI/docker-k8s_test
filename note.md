@@ -169,6 +169,7 @@ XII. Admin processes
 
 
 ## 2025-12-04
+已經將Chrome和Chromedriver安裝在Image上
 透過pip3 以安裝"requirements.txt",剩下"requirements-2.txt"還沒有安裝
 嘗試在Docker container下,使用Chrome與Chrome Driver,需要額外安裝以下的package
 ```Shell
